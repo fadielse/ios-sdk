@@ -73,6 +73,17 @@ public class CotterAPIService: APIService {
         )
         
         apiClient.send(req) { response in
+            switch response {
+            case .success(let resp):
+                if resp.approved, method == "PIN" {
+                    print("Call Api to save pin")
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "callApiMigratePin"), object: code)
+                } else {
+                    print("Wrong PIN")
+                }
+            case .failure(let err):
+                print("error \(err)")
+            }
             cb(response)
         }
     }

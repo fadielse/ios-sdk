@@ -162,9 +162,6 @@ class OneTimeCodeTextField : UITextField {
                         currentLabel.textColor = wrongColor
                     }
                 }
-            } else {
-                print("Call Api to save pin")
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "callApiMigratePin"), object: text)
             }
         }
     }
