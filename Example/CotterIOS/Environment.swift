@@ -13,11 +13,11 @@ class Environment {
     let env = ProcessInfo.processInfo.environment
     
     var COTTER_API_KEY_ID: String? {
-        return env["COTTER_API_KEY_ID"]
+        return env["082fd843-7de7-4566-a35d-40005f1e23eb"]
     }
     
     var COTTER_API_SECRET_KEY: String? {
-        return env["COTTER_API_SECRET_KEY"]
+        return nil
     }
     
     var DEV_MODE: String? {
